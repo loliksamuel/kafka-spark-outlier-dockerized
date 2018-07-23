@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/outlier-web/pom.xml" />
+        <option value="$PROJECT_DIR$/spark-inbound/pom.xml" />
+        <option value="$PROJECT_DIR$/web-mongo/pom.xml" />
+        <option value="$PROJECT_DIR$/web-mysql/pom.xml" />
+        <option value="$PROJECT_DIR$/spark-consumer/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_9" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+</project>

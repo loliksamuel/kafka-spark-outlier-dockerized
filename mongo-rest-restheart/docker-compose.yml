@@ -1,0 +1,50 @@
+version: '2'
+
+### Creates a named network with the default bridge driver
+# The network is shared between restheart and mongodb only
+# See: https://docs.docker.com/engine/userguide/networking/dockernetworks/
+# See: https://docs.docker.com/engine/reference/commandline/network_create/
+networks:
+   backend:
+       
+### Create a permanent, named data volume
+# This makes much easier to identify where the mongodb data is stored on host
+# See: https://docs.docker.com/engine/userguide/containers/dockervolumes/#mount-a-shared-storage-volume-as-a-data-volume
+volumes:
+   restheart-datadb:
+
+services:
+   restheart:
+      ### Change the tag below to run a different version of RESTHeart
+      image: softinstigate/restheart
+      ### Uncomment to name the container explicitly
+      container_name: restheart
+      depends_on:
+         - mongodb
+      networks:
+         - backend
+      ports:
+         - "8080:8080"
+      ### Uncoment below if you want to mount a local configuration folder
+      ### to overwrite default restheart.yml and/or security.yml
+      #volumes:
+      #   - ./etc:/opt/restheart/etc:ro
+
+   mongodb:
+      # select a MongoDB 3.x version
+      image: mongo:3.6
+      ### Name the container explicitly
+      container_name: restheart-mongo
+      environment:
+            # Be sure this credentials match with those in etc/restheart.yml
+            # $ mongo --username restheart --password R3ste4rt! --authenticationDatabase admin
+            MONGO_INITDB_ROOT_USERNAME: restheart
+            MONGO_INITDB_ROOT_PASSWORD: R3ste4rt!
+      command: --bind_ip_all --auth
+      volumes:
+         - restheart-datadb:/data/db
+      networks:
+         - backend
+      ### Uncoment below if you want to map mongodb port
+      #ports:
+      #   - "27017:27017"

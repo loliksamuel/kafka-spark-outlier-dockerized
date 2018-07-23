@@ -1,0 +1,8 @@
+outlier/detection/Application.class
+outlier/detection/dto/Stats.class
+outlier/detection/web/repository/OutlierRepositoryImpl.class
+outlier/detection/web/repository/OutlierRepository.class
+outlier/detection/web/controller/PublishersController.class
+outlier/detection/dto/OutputMessage.class
+outlier/detection/web/repository/OutlierRepositoryCustom.class
+outlier/detection/dto/Outlier.class

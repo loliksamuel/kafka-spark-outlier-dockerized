@@ -1,0 +1,8 @@
+/Users/samuelcardonis/Documents/projects/kafka/stream/kafka-spark-docker-outlier/web-mongo/src/main/java/outlier/detection/web/controller/PublishersController.java
+/Users/samuelcardonis/Documents/projects/kafka/stream/kafka-spark-docker-outlier/web-mongo/src/main/java/outlier/detection/dto/OutputMessage.java
+/Users/samuelcardonis/Documents/projects/kafka/stream/kafka-spark-docker-outlier/web-mongo/src/main/java/outlier/detection/Application.java
+/Users/samuelcardonis/Documents/projects/kafka/stream/kafka-spark-docker-outlier/web-mongo/src/main/java/outlier/detection/dto/Outlier.java
+/Users/samuelcardonis/Documents/projects/kafka/stream/kafka-spark-docker-outlier/web-mongo/src/main/java/outlier/detection/web/repository/OutlierRepositoryImpl.java
+/Users/samuelcardonis/Documents/projects/kafka/stream/kafka-spark-docker-outlier/web-mongo/src/main/java/outlier/detection/web/repository/OutlierRepository.java
+/Users/samuelcardonis/Documents/projects/kafka/stream/kafka-spark-docker-outlier/web-mongo/src/main/java/outlier/detection/dto/Stats.java
+/Users/samuelcardonis/Documents/projects/kafka/stream/kafka-spark-docker-outlier/web-mongo/src/main/java/outlier/detection/web/repository/OutlierRepositoryCustom.java

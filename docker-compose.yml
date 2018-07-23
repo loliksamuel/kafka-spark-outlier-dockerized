@@ -1,0 +1,43 @@
+kafka_host:
+  image: spotify/kafka
+  hostname: kafka_host
+  environment:
+    ADVERTISED_PORT: 9092
+    ADVERTISED_HOST: kafka_host
+  ports:
+   - 9092:9092
+   - 2181:2181
+
+kafka_initializer:
+  image: outlier-detection/kafka-broker
+  links:
+    - kafka_host
+
+mongo_host:
+  image: outlier-detection/mongo-custom
+  ports:
+   - 27017:27017
+#  command: mongod --smallfiles --quiet --logpath=/dev/null
+
+inbound:
+  #build: ../OutlierDetection/spark-consumer/docker/
+  image: outlier-detection/spark-consumer
+  links:
+      - mongo_host
+      - kafka_initializer
+      - kafka_host
+
+webview:
+ #build: ../OutlierWeb/web-mongo/docker/
+ image: outlier-detection/web-mongo
+ links:
+   - mongo_host
+ ports:
+   - 8081:8080
+   
+python_producer:
+  image: outlier-detection/python-producer
+  links:
+    - kafka_initializer  
+    - kafka_host
+    - inbound

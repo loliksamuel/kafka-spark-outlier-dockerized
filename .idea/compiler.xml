@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="outlier-web" />
+        <module name="spark-consumer" />
+        <module name="spark-inbound" />
+        <module name="web-mongo" />
+        <module name="web-mysql" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="outlier-web" target="1.8" />
+      <module name="spark-consumer" target="1.8" />
+      <module name="spark-inbound" target="1.8" />
+      <module name="web-mongo" target="1.8" />
+      <module name="web-mysql" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
